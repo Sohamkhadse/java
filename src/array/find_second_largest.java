@@ -7,7 +7,7 @@ public class find_second_largest {
     	 
 
  		int largest = a[0];
-int second = 0;
+        int second = 0;
  		for(int i = 1; i < a.length; i++) {
 
  			if(a[i] > largest) {
