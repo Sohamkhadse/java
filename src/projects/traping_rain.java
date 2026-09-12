@@ -17,9 +17,7 @@ public class traping_rain {
                 if(a[j] > leftMax) {
                     leftMax = a[j];
                 }
-            }
-
-            int rightMax = a[i];
+            }            int rightMax = a[i];
 
             for(int j = i + 1; j < a.length; j++) {
 
