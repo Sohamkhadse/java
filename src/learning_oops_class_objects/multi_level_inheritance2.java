@@ -1,51 +1,82 @@
 package learning_oops_class_objects;
-import scanner.util.
+
+import java.util.Scanner;
+
 public class multi_level_inheritance2 {
 
-	class Person {
-		String name;int age;
-		void setDetails(String name, int age) {
-			this.name = name;
-			this.age = age;
-		}
-	}
+    class Person {
+        String name;
+        int age;
 
-	class Employee extends Person {
-		int salary;int exp;
-		void setDetails(int salary, int exp) {
-			this.salary = salary;
-			this.exp = exp;
-		}
-	}
+        void setDetails(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+    }
 
-	class Teacher extends Employee {
-		String subject;
-		void setSubject(String subject) {
-			this.subject = subject;
-		}
+    class Employee extends Person {
+        int salary;
+        int exp;
 
-		void display() {
-			System.out.println("Name: " + name);
-			System.out.println("Age: " + age);
-			System.out.println("Salary: " + salary);
-			System.out.println("Experience: " + exp);
-			System.out.println("Subject: " + subject);
-		}
-	}
+        void setDetails(int salary, int exp) {
+            this.salary = salary;
+            this.exp = exp;
+        }
+    }
 
-	public static void main(String[] args) {
+    class Teacher extends Employee {
+        String subject;
 
-		multi_level_inheritance2 obj = new multi_level_inheritance2();
-//
-//		Teacher t = obj.new Teacher();
-//
-//		t.setDetails("Soham", 22);
-//		t.setDetails(50000, 3);
-//		t.setSubject("Java");
-		for(int i = 0; i< 20;i++) {
-			
-		}
+        void setSubject(String subject) {
+            this.subject = subject;
+        }
 
-		t.display();
-	}
+        void display() {
+            System.out.println("Name: " + name);
+            System.out.println("Age: " + age);
+            System.out.println("Salary: " + salary);
+            System.out.println("Experience: " + exp);
+            System.out.println("Subject: " + subject);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        multi_level_inheritance2 obj = new multi_level_inheritance2();
+
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 1; i <= 20; i++) {
+
+            Teacher t = obj.new Teacher();
+
+            System.out.println("\nEnter details of Teacher " + i);
+
+            System.out.print("Enter name: ");
+            String name = sc.nextLine();
+
+            System.out.print("Enter age: ");
+            int age = sc.nextInt();
+
+            System.out.print("Enter salary: ");
+            int salary = sc.nextInt();
+
+            System.out.print("Enter experience: ");
+            int exp = sc.nextInt();
+
+            sc.nextLine();
+
+            System.out.print("Enter subject: ");
+            String subject = sc.nextLine();
+
+            t.setDetails(name, age);
+            t.setDetails(salary, exp);
+            t.setSubject(subject);
+
+            System.out.println("\nTeacher " + i + " Details:");
+            t.display();
+        }
+
+        sc.close();
+    }
 }
