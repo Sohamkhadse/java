@@ -31,3 +31,4 @@ public class even_odd_sum {
         System.out.println("Odd sum is " + osum);
     }
 }
+
