@@ -50,7 +50,7 @@ public class first_exception {
 		int n = sc.nextInt();
 		System.out.println(n);
 	}catch (InputMismatchException e){
-		System.out.println(e);		
+		System.out.println(e);	
 	}
 	
 	
