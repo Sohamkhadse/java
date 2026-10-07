@@ -38,7 +38,7 @@ class B extends Thread {
 
 public class first_thread {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.out.println("This is dead poet's society");
 
@@ -51,6 +51,7 @@ public class first_thread {
         
         B b = new B();
         b.start();
+        b.join();
 
         for(int j = 0; j < 50; j++) {
             System.out.println("This is main Thread stop branch");
